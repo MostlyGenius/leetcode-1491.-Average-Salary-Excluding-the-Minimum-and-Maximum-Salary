@@ -12,14 +12,23 @@ func average(salary []int) {
 	for i < len(salary) {
 		if minS > salary[i] {
 			minS = salary[i]
-		}
-		if maxS < salary[i] {
+		} else if maxS < salary[i] {
 			maxS = salary[i]
 		}
 		i++
 	}
-	fmt.Println(minS)
-	fmt.Println(maxS)
+	//find mean
+	averageSalary := 0
+
+	//add up all items
+	for i < len(salary) {
+		averageSalary = averageSalary + salary[i]
+	}
+	//subtrack and low
+	averageSalary = averageSalary - (minS + maxS)
+	//find mean
+	averageSalary = averageSalary / 2
+	fmt.Println(averageSalary)
 
 }
 
